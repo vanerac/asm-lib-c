@@ -1,0 +1,7 @@
+.idea
+.gitignore
+CMakeLists.txt
+*.so
+cmake-build-debug
+main.c
+*.o
