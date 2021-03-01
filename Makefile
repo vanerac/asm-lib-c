@@ -6,13 +6,19 @@
 ##
 
 
-SRC				=		src/memcpy.s	\
-						src/memset.s	\
-						src/strchr.s	\
-						src/strcmp.s	\
-						src/strlen.s	\
-						src/strncmp.s	\
-						src/rindex.s
+SRC				=		src/memcpy.s 		\
+  						src/memmove.s  		\
+  						src/memset.s		\
+  						src/rindex.s		\
+  						src/strcasecmp.s	\
+  						src/strchr.s		\
+  						src/strcmp.s  		\
+  						src/strcspn.s		\
+  						src/strlen.s  		\
+  						src/strncmp.s  		\
+  						src/strpbrk.s		\
+  						src/strstr.s
+
 
 BUILDDIR		=    	build
 
