@@ -1,3 +1,9 @@
+BITS 64
+
+SECTION .text
+
+GLOBAL strchr
+
 strchr:
     ; Init
     mov rax, rdi ; cpy inital ptr

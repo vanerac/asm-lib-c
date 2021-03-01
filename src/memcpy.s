@@ -1,3 +1,9 @@
+BITS 64
+
+SECTION .text
+
+GLOBAL memcpy
+
 memcpy:
     mov r8, rdi ; cpy ptr dest
     mov r9, rsi ; cpy ptr src

@@ -1,3 +1,9 @@
+BITS 64
+
+SECTION .text
+
+GLOBAL strcmp
+
 strcmp:
     jmp strcmp_loop
 

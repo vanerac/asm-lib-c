@@ -1,4 +1,8 @@
-;GLOBAL strcmo:function
+BITS 64
+
+SECTION .text
+
+GLOBAL strncmp
 
 strncmp:
     mov r8, rdi ; cpy ptr dest

@@ -1,3 +1,9 @@
+BITS 64
+
+SECTION .text
+
+GLOBAL memset
+
 memset:
     mov r8, rdi ; cpy ptr
     mov r10, rdx ; cpy size

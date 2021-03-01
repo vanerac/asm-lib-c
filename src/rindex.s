@@ -1,6 +1,12 @@
+BITS 64
+
+SECTION .text
+
+GLOBAL rindex
+
 rindex:
     ; Init
-    mov rax, 0 ; cpy inital ptr
+    mov rax, 0; cpy inital ptr
     jmp rindex_loop
 
 rindex_loop:
@@ -18,14 +24,7 @@ rindex_loop:
 rindex_save:
     mov rax, rdi
 
-rindex_fail:
-    mov rax, 0
-    ret
-
 rindex_end:
-    mov cl, BYTE [rax]
-    cmp cl, sil
-    jne rindex_fail
     ret
 
 rindex_inc:

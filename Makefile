@@ -18,7 +18,9 @@ BUILDDIR		=    	build
 
 override OBJ	=		$(SRC:%.s=$(BUILDDIR)/%.o)
 
-TRC				=		tests/test_rindex.c
+TRC				=		tests/test_rindex.c	\
+						tests/test_strlen.c	\
+						tests/test_strchr.c
 
 OTRC			=		$(TRC:%.c=%.o)
 
@@ -30,9 +32,11 @@ ASFLAGS			=		-f elf64
 
 AS				=		nasm
 
-NAME			=		 libmy_malloc.so
+NAME			=		 libasm.so
 
 LDFLAGS			=		-shared #-Wl,-soname,$(NAME)
+
+CC				=		ld
 
 all: $(NAME) ## hoes mad
 
@@ -63,7 +67,7 @@ gclean:	fclean clean ## ?
 re: gclean all ## Re
 
 tests_run:	$(NAME) $(OTRC) ## Run Tests
-	gcc -o unit_test $(OTRC) -lcriterion --coverage # $(OTRC) $(OBJ) $(CFLAGS)
+	gcc -o unit_test $(OTRC) -lcriterion --coverage
 	LD_PRELOAD=./$(NAME) ./unit_test
 
 help:                                                        ##

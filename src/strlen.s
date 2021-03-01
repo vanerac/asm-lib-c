@@ -1,5 +1,12 @@
+BITS 64
+
+SECTION .text
+
+GLOBAL strlen
+
 strlen:
     ; Init
+
     mov rax, 0 ; rax = 0
     jmp strlen_loop
 
