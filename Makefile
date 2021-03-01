@@ -24,9 +24,16 @@ BUILDDIR		=    	build
 
 override OBJ	=		$(SRC:%.s=$(BUILDDIR)/%.o)
 
-TRC				=		tests/test_rindex.c	\
+TRC				=		tests/test_memcpy.c	\
+ 						tests/test_memset.c	\
+						tests/test_rindex.c	\
+						tests/test_strchr.c	\
+						tests/test_strcmp.c	\
+						tests/test_strcspn.c\
 						tests/test_strlen.c	\
-						tests/test_strchr.c
+						tests/test_strncmp.c\
+						tests/test_strpbrk.c\
+						tests/test_strstr.c
 
 OTRC			=		$(TRC:%.c=%.o)
 
@@ -64,16 +71,20 @@ $(BUILDDIR)%/.:
 
 clean: ## rm build obj
 	$(RM) -r $(BUILDDIR)
+	rm -rf tests/*.o
 
 fclean:	clean ## clean + rm $(NAME)
 	rm -rf $(NAME)
+	rm -rf *.gc*
 
 gclean:	fclean clean ## ?
 
 re: gclean all ## Re
 
-tests_run:	$(NAME) $(OTRC) ## Run Tests
-	gcc -o unit_test $(OTRC) -lcriterion --coverage
+tests_run: override CC = gcc
+
+tests_run:	$(NAME) ## Run Tests
+	gcc -o unit_test $(TRC) -lcriterion --coverage
 	LD_PRELOAD=./$(NAME) ./unit_test
 
 help:                                                        ##

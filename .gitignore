@@ -5,3 +5,5 @@ CMakeLists.txt
 cmake-build-debug
 main.c
 *.o
+unit_test
+*.gc*
