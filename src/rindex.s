@@ -6,7 +6,7 @@ GLOBAL rindex
 
 rindex:
     ; Init
-    mov rax, 0; cpy inital ptr
+    mov rax, 0 ; cpy inital ptr
     jmp rindex_loop
 
 rindex_loop:
@@ -23,6 +23,8 @@ rindex_loop:
 
 rindex_save:
     mov rax, rdi
+    inc rdi ; increment
+    jmp rindex_loop
 
 rindex_end:
     ret
