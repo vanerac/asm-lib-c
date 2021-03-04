@@ -13,16 +13,19 @@ strpbrk_loop:
     mov cl, BYTE [rdi] ; copy byte
     mov r8, rsi
     jmp strpbrk_inc
+
+strpbrk_jmp:
     inc rdi
-    mov cl, BYTE [rdi]
-    cmp cl, 0
-    je strpbrk_end
+    mov r8, rsi
     jmp strpbrk_loop
 
 strpbrk_inc:
-    cmp cl, BYTE [r8]
     cmp cl, 0
-    je strpbrk_loop
+    je strpbrk_end
+    cmp cl, BYTE [r8]
+    je strpbrk_end
+    cmp BYTE [r8], 0
+    je strpbrk_jmp
     inc r8
     jmp strpbrk_inc
 
