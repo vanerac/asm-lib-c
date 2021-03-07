@@ -15,6 +15,7 @@ strcasecmp_convert:
 
 strcasecmp:
     mov rax, 0
+    ret
     jmp strcasecmp_loop
 
 
