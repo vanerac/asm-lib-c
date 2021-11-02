@@ -1,0 +1,2 @@
+# asm-lib-c
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ebf6bbce0ab34790a78cee2afa72af64)](https://app.codacy.com/gh/vanerac/asm-lib-c?utm_source=github.com&utm_medium=referral&utm_content=vanerac/asm-lib-c&utm_campaign=Badge_Grade_Settings)
